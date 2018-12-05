@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="presenter"
+            type="com.zj.ocr.TextDiscernActivity"/>
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="http://d.hiphotos.baidu.com/exp/w=500/sign=feeac86ced1190ef01fb92dffe1a9df7/32fa828ba61ea8d386c06c859d0a304e241f5854.jpg"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimary"
+                android:textIsSelectable="true"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#F4F4F4"
+                android:text="根据url获取识别结果"
+                android:onClick="@{()->presenter.onUrlClick()}"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="拍照"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:background="#F4F4F4"
+                android:onClick="@{()->presenter.onTakePhotoClick()}"
+                />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#F1F1FF"
+                android:id="@+id/iv_photo"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="根据image获取识别结果"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:background="#F4F4F4"
+                android:onClick="@{()->presenter.onImageInfoClick()}"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/tv_result"
+                />
+
+
+
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+</layout>
